@@ -42,7 +42,9 @@ class _LocalWeatherScreenState extends State<LocalWeatherScreen> {
     // TODO: implement initState
     super.initState();
 
-    _bloc.add(LoadCurrentWeather("London"));
+    getCurrentCity().then((city) {
+      _bloc.add(LoadCurrentWeather(city));
+    });
   }
 
   @override
