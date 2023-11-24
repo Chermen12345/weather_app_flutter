@@ -22,6 +22,7 @@ class LocalWeatherScreen extends StatefulWidget {
 }
 
 class _LocalWeatherScreenState extends State<LocalWeatherScreen> {
+  String current_city = "";
   final CurrentWeatherBloc _bloc = CurrentWeatherBloc();
   Future<String> getCurrentCity() async {
     LocationPermission perm = await Geolocator.checkPermission();
@@ -44,6 +45,10 @@ class _LocalWeatherScreenState extends State<LocalWeatherScreen> {
 
     getCurrentCity().then((city) {
       _bloc.add(LoadCurrentWeather(city));
+
+      setState(() {
+        current_city = city;
+      });
     });
   }
 
@@ -68,7 +73,7 @@ class _LocalWeatherScreenState extends State<LocalWeatherScreen> {
             children: [
               Padding(
                 padding: const EdgeInsets.only(top: 10, left: 20),
-                child: Text("Current position",
+                child: Text("${current_city}",
                     style:
                         GoogleFonts.aBeeZee(color: Colors.white, fontSize: 20)),
               ),
