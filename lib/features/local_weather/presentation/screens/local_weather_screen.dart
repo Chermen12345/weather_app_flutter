@@ -5,7 +5,6 @@ import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:weather_app_flutter/data/models/current_weather.dart';
-import 'package:weather_app_flutter/data/remote_data_source/remote_data_source.dart';
 import 'package:weather_app_flutter/features/local_weather/presentation/bloc/current_weather_bloc.dart';
 import 'package:weather_app_flutter/features/local_weather/presentation/bloc/current_weather_event.dart';
 import 'package:weather_app_flutter/features/local_weather/presentation/bloc/current_weather_state.dart';
